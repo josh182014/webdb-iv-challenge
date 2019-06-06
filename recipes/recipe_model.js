@@ -3,10 +3,16 @@ const config = require('../knexfile');
 const db = knex(config.development)
 
 module.exports = {
-    find,
-    
+    getRecipes,
+    addRecipe,
+
 }
 
-function find() {
+function getRecipes() {
     return db('recipes')
+}
+
+function addRecipe(recipe) {
+    return db('recipes')
+    .insert(recipe)
 }

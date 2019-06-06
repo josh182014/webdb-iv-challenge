@@ -5,6 +5,7 @@ const db = knex(config.development)
 module.exports = {
     getDishes,
     addDish,
+    getDish,
     
 }
 
@@ -15,4 +16,10 @@ function getDishes() {
 function addDish(dish) {
     return db('dishes')
     .insert(dish)
+}
+
+function getDish(id) {
+    return db('dishes')
+    .where({id})
+    .first()
 }

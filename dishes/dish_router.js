@@ -28,4 +28,16 @@ router.post('/', (req, res) => {
     }
 })
 
+router.get('/:id', (req, res) => { //still need to add error checks
+    Dish.getDish(req.params.id)
+    .then(response => {
+        res.status(200).json(response)
+    })
+    .catch(error => {
+        res.status(500).json("Server Error")
+    })
+})
+
+
+
 module.exports = router;
