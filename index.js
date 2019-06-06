@@ -1,6 +1,6 @@
 const express = require('express')
 
-// const recipeRouter = require('./recipes/recipe_router')
+const recipeRouter = require('./recipes/recipe_router')
 
 const server = express();
 server.use(express.json());
@@ -13,4 +13,4 @@ server.listen(port, () =>
 server.get('/', (req, res) => {
     res.status(200).json("Hello, World.")
 })
-// server.use('/api/recipes', recipeRouter);
+server.use('/api/recipes', recipeRouter);
