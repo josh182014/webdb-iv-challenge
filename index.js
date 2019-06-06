@@ -1,6 +1,7 @@
 const express = require('express')
 
 const recipeRouter = require('./recipes/recipe_router')
+const dishRouter = require('./dishes/dish_router')
 
 const server = express();
 server.use(express.json());
@@ -14,3 +15,4 @@ server.get('/', (req, res) => {
     res.status(200).json("Hello, World.")
 })
 server.use('/api/recipes', recipeRouter);
+server.use('/api/dishes', dishRouter);

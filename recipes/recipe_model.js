@@ -4,6 +4,7 @@ const db = knex(config.development)
 
 module.exports = {
     find,
+    
 }
 
 function find() {
